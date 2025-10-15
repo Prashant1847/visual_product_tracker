@@ -1,16 +1,15 @@
-============================================================
-🛍️ VISUAL PRODUCT MATCHER  
+# 🛍️ VISUAL PRODUCT MATCHER  
 AI-powered visual search engine for e-commerce products  
-============================================================
 
-🌐 LIVE DEMO  
-------------------------------------------------------------
+
+# 🌐 LIVE DEMO  
+
 🔗 https://visualproduct.vercel.app/  
 Try the hosted version — upload or paste an image URL and explore visually similar products instantly.
 
-============================================================
-🎯 OVERVIEW
-------------------------------------------------------------
+
+# 🎯 OVERVIEW
+
 Visual Product Matcher enables users to find visually similar 
 items by uploading an image or providing an image URL.
 
@@ -19,9 +18,9 @@ and performs cosine similarity search over a precomputed product
 embedding database. The design focuses on low latency, low cost, 
 and simplicity suitable for free-tier hosting.
 
-============================================================
-✅ CORE FEATURES
-------------------------------------------------------------
+
+# ✅ CORE FEATURES
+
 
 🖼️ IMAGE UPLOAD & URL INPUT  
 - Supports both file uploads and direct image URLs.  
@@ -47,9 +46,9 @@ and simplicity suitable for free-tier hosting.
 🧩 QUICK DEMO MODE  
 - Includes a small demo dataset for instant testing.  
 
-============================================================
-🧠 DESIGN RATIONALE
-------------------------------------------------------------
+
+# 🧠 DESIGN RATIONALE
+
 | DESIGN CHOICE | WHY IT MATTERS |
 |----------------|----------------|
 | Precomputed embeddings stored in DB | Avoids repeated API calls and latency; embeddings are static. |
@@ -59,18 +58,17 @@ and simplicity suitable for free-tier hosting.
 | Cosine similarity in JS | Avoids extra Python service; keeps architecture lightweight. |
 | Compact dataset (~200 items) | Balances variety with fast free-tier performance. |
 
-============================================================
-⚙️ SYSTEM FLOW
-------------------------------------------------------------
+
+# ⚙️ SYSTEM FLOW
+
 1. User uploads image or provides URL.  
 2. Backend sends image to Jina API → gets 512-D embedding.  
 3. Product embeddings loaded from MongoDB cache (auto-refresh every 5 min).  
 4. Cosine similarity computed between query and product vectors.  
 5. Top-K results returned as JSON → displayed in frontend.  
 
-============================================================
-🧭 SYSTEM DESIGN DIAGRAM
-------------------------------------------------------------
+# 🧭 SYSTEM DESIGN DIAGRAM
+
         ┌────────────────────────┐
         │   User Upload / URL     │
         └───────────┬─────────────┘
@@ -105,20 +103,18 @@ and simplicity suitable for free-tier hosting.
         │  JSON Response + UI     │
         └────────────────────────┘
 
-============================================================
-🧩 TECH STACK
-------------------------------------------------------------
+# 🧩 TECH STACK
 AI MODEL:       Jina CLIP-v2 (512-D)  
-BACKEND:        Node.js + Express (async/await)  
+BACKEND:        Node.js + Express 
 DATABASE:       MongoDB (with stored embeddings)  
 CACHE:          In-memory (5-minute TTL)  
 SIMILARITY:     Cosine similarity (pure JS)  
 FRONTEND:       React (mobile-responsive)  
 DEPLOYMENT:     Render / Vercel / Google Cloud Free Tier  
 
-============================================================
-🧾 EVALUATION ALIGNMENT
-------------------------------------------------------------
+
+# 🧾 EVALUATION ALIGNMENT
+
 | CRITERION | IMPLEMENTATION |
 |------------|----------------|
 | Problem-solving approach | Precomputed embeddings + live query encoding |
