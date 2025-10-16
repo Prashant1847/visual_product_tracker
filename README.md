@@ -7,6 +7,9 @@ AI-powered visual search engine for e-commerce products
 🔗 https://visualproduct.vercel.app/  
 Try the hosted version — upload or paste an image URL and explore visually similar products instantly.
 
+# 🌐 GITHUB LINK
+🔗 https://github.com/Prashant1847/visual_product_tracker
+
 
 # 🎯 OVERVIEW
 
